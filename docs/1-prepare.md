@@ -43,7 +43,7 @@ $ systemctl stop firewalld && systemctl disable firewalld
 $ iptables -F && iptables -X && iptables -F -t nat && iptables -X -t nat && iptables -P FORWARD ACCEPT
 # 关闭swap
 $ swapoff -a
-$ sed -i '/swap/s/^\(.*\)$/#\1/g' /etc/fstab
+$ sed -i '/swap/s/^\(.*\)$/#\1/g' /etc/fstab #在带有swap的行前插入一个#号
 # 关闭selinux
 $ setenforce 0
 # 关闭dnsmasq(否则可能导致docker容器无法解析域名)
