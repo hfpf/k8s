@@ -44,6 +44,8 @@ $ iptables -F && iptables -X && iptables -F -t nat && iptables -X -t nat && ipta
 # 关闭swap
 $ swapoff -a
 $ sed -i '/swap/s/^\(.*\)$/#\1/g' /etc/fstab #在带有swap的行前插入一个#号
+# \( 和\)是有特殊用途的，表示把括号中的内容单独提出来
+# \1是捕获组 ，就是第一个小括号内的值
 # 关闭selinux
 $ setenforce 0
 # 关闭dnsmasq(否则可能导致docker容器无法解析域名)
